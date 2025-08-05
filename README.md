@@ -96,8 +96,17 @@ cd diagnostico_cancer_ml
 ### Crie e ative o ambiente virtual:
 ```bash
 python -m venv env
-source env/bin/activate   # Linux/Mac
-env\Scripts\activate    # Windows
+env\Scripts\activate # Windows
+```
+
+```bash
+python -m venv env
+env\Scripts\activate # Git Bash (Windows)
+```
+
+```bash
+python3 -m venv env
+source env/bin/activate # Mac
 ```
 
 ### Instale as dependências:
