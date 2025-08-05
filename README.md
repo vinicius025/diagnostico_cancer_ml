@@ -22,23 +22,15 @@ Dataset limpo, amplamente utilizado em pesquisas de ML, ideal para prototipagem.
 ## Estrutura do Projeto
 
 ```
-PROVAFIAP/
+Diagnostico_cancer_ml/
 │
-├── env/                # Ambiente virtual (não enviado para o Git)
-│
-├── ProvaFiap/          # Pacote principal do projeto
+├── diagnostico_cancer_ml/     # Pacote principal do projeto
 │   ├── __init__.py
 │   └── core.py         # Código principal (funções e classes do pacote)
 │
-├── notebooks/
-│   └── core.ipynb      # Notebook de demonstração e exploração de dados
-│
-├── tests/              # Testes automatizados com pytest
-│   └── test_core.py
-│
 ├── README.md           # Este arquivo
-├── setup.py            # Configuração para empacotamento do pacote
-└── requirements.txt    # Dependências do projeto
+├── requirements.txt    # Dependências do projeto
+└── setup.py            # Configuração para empacotamento do pacote
 ```
 
 ---
@@ -47,7 +39,6 @@ PROVAFIAP/
 - **Python 3.11+**
 - **Jupyter Notebook**
 - **Pandas** – Manipulação de dados
-- **NumPy** – Cálculos numéricos
 - **Matplotlib** & **Seaborn** – Visualizações
 - **Scikit-learn** – Modelagem de Machine Learning
 - **Pytest** – Testes automatizados
@@ -75,9 +66,6 @@ PROVAFIAP/
 - **Curva ROC e AUC**.  
 - **Cross-validation (10 folds)** para validar consistência dos resultados.
 
-**Testes**  
-- Testes unitários com **pytest**.
-
 ---
 
 ## Resultados
@@ -101,8 +89,8 @@ O modelo de Regressão Logística apresentou a melhor performance geral (98%), e
 
 ### Clone o repositório:
 ```bash
-git clone https://github.com/SEU_USUARIO/ProvaFiap.git
-cd ProvaFiap
+git clone https://github.com/vinicius025/diagnostico_cancer_ml.git
+cd diagnostico_cancer_ml
 ```
 
 ### Crie e ative o ambiente virtual:
