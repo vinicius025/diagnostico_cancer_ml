@@ -73,12 +73,12 @@ Diagnostico_cancer_ml/
 **Com todas as features:**
 - **Regressão Logística:** 98.0% ± 1.5%  
 - **Random Forest:** 96.0% ± 2.8%  
-- **SVM:** 97.7% ± 1.8%
+- **SVM:** 97.0% ± 1.5%
 
 **Com apenas 10 features mais relevantes:**
 - **Regressão Logística:** 95.5% ± 2.5%  
-- **Random Forest:** 95.0% ± 3.0%  
-- **SVM:** 94.7% ± 2.7%
+- **Random Forest:** 94.7% ± 2.9%  
+- **SVM:** 95.0% ± 2.5%
 
 ## Resumo interpretativo dos resultados
 O modelo de Regressão Logística apresentou a melhor performance geral (98%), enquanto Random Forest e SVM também obtiveram resultados robustos. A seleção de features reduziu a dimensionalidade sem comprometer significativamente a performance, mostrando que é possível simplificar o modelo mantendo alta acurácia.
@@ -115,11 +115,23 @@ pip install -r requirements.txt
 ```
 
 ### Rode o notebook:
+Verifique se o Jupyter está instalado. Se não estiver:
+```bash
+pip install notebook
+```
+
+Em seguida, rode:
 ```bash
 jupyter notebook notebooks/core.ipynb
 ```
 
 ### Execute os testes:
+Forma recomendada (compatível com qualquer shell):
+```bash
+env/Scripts/python.exe -m pytest tests/
+```
+
+Alternativa (se pytest estiver no PATH):
 ```bash
 pytest tests/
 ```
