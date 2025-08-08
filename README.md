@@ -54,6 +54,7 @@ Diagnostico_cancer_ml/
 
 **Pré-processamento**  
 - Padronização dos dados com `StandardScaler`.  
+- Redução de dimensionalidade com PCA (por exemplo, para manter 95% da variância)
 - Seleção das 10 features mais relevantes (análise de correlação + feature importance).
 
 **Modelagem**  
