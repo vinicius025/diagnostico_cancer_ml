@@ -28,6 +28,7 @@ Diagnostico_cancer_ml/
 │   ├── __init__.py
 │   └── core.py         # Código principal (funções e classes do pacote)
 │
+├── Dockefile
 ├── README.md           # Este arquivo
 ├── requirements.txt    # Dependências do projeto
 └── setup.py            # Configuração para empacotamento do pacote
@@ -59,7 +60,7 @@ Diagnostico_cancer_ml/
 - Treinamento de 3 algoritmos:
   - **Regressão Logística** (baseline)
   - **Random Forest**
-  - **SVM (kernel RBF)**
+  - **SVM (kernel Linear)**
 
 **Avaliação**  
 - Métricas: Accuracy, Precision, Recall, F1-score.  
@@ -117,12 +118,12 @@ pip install -r requirements.txt
 ### Rode o notebook:
 Verifique se o Jupyter está instalado. Se não estiver:
 ```bash
-pip install notebook
+pip install diagnostico_cancer_ml
 ```
 
 Em seguida, rode:
 ```bash
-jupyter notebook notebooks/core.ipynb
+jupyter diagnostico_cancer_ml diagnostico_cancer_ml/core.ipynb
 ```
 
 ### Execute os testes:
@@ -134,6 +135,13 @@ env/Scripts/python.exe -m pytest tests/
 Alternativa (se pytest estiver no PATH):
 ```bash
 pytest tests/
+```
+
+### Como rodar o projeto em Docker
+
+```bash
+docker build -t diagnostico-medico .
+docker run -p 8888:8888 diagnostico-medico
 ```
 
 ---

@@ -3,8 +3,9 @@ env/
 .venv/
 
 # Pastas de build do Python
-build/
+env/
 dist/
+build/
 *.egg-info/
 
 # Cache do Python
