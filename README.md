@@ -81,8 +81,19 @@ Diagnostico_cancer_ml/
 - **Random Forest:** 94.7% ± 2.9%  
 - **SVM:** 95.0% ± 2.5%
 
+**Utilizando o metódo PCA**
+- **Logística (PCA):** 0.980 ± 0.025
+- **Random Forest (PCA):** 0.932 ± 0.042
+- **SVC (PCA):** 0.972 ± 0.021
+
 ## Resumo interpretativo dos resultados
-O modelo de Regressão Logística apresentou a melhor performance geral (98%), enquanto Random Forest e SVM também obtiveram resultados robustos. A seleção de features reduziu a dimensionalidade sem comprometer significativamente a performance, mostrando que é possível simplificar o modelo mantendo alta acurácia.
+A comparação dos modelos de classificação por meio da validação cruzada (10-fold) evidenciou que a Regressão Logística apresentou desempenho consistente e elevado em todas as estratégias avaliadas (todas as features, 10 mais correlacionadas e PCA), alcançando até 98% de acurácia média com baixo desvio padrão. Isso indica uma forte capacidade do modelo em generalizar bem para novos dados.
+
+O Random Forest, embora também tenha apresentado bom desempenho geral, foi o modelo que mais variou entre as estratégias, especialmente quando submetido à redução de dimensionalidade via PCA, o que pode indicar sensibilidade à forma como as variáveis foram transformadas.
+
+Já o SVC (Support Vector Classifier) manteve desempenho estável e competitivo nas três abordagens, com destaque para a versão com PCA, que alcançou 97,2% de acurácia média, superando ligeiramente o desempenho da versão com todas as variáveis.
+
+De forma geral, os resultados demonstram que, embora a seleção de features e o uso do PCA possam oferecer vantagens específicas, modelos simples como a regressão logística continuam sendo altamente eficazes para o conjunto de dados avaliado, especialmente quando se busca estabilidade e previsibilidade nos resultados.
 
 ---
 
