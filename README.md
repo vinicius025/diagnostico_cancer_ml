@@ -170,5 +170,5 @@ O dataset está licenciado sob a **Creative Commons Attribution 4.0 Internationa
 **Fonte oficial:** [Kaggle - Breast Cancer Wisconsin (Diagnostic)](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data/data) 
 
 ## Link do video de explicação
-
 **Vídeo de demonstração:** [Clique aqui para assistir](https://youtu.be/5UroJKtpQP8)
+
