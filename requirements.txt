@@ -4,3 +4,7 @@ seaborn
 scikit-learn
 pytest>=8.0
 jupyter
+openai
+transformers
+numpy
+pygad
