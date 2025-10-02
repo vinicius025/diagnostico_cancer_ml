@@ -1,10 +1,10 @@
-# Sistema de Diagnóstico Inteligente – Tech Challenge (Fase 1)
-Este projeto foi desenvolvido como parte do **Tech Challenge – Fase 1**, com o objetivo de criar uma solução inicial de **IA para suporte ao diagnóstico médico**, utilizando **Machine Learning** para análise de exames e classificação de doenças.
+# Sistema de Diagnóstico Inteligente – Tech Challenge (Fase 1) e (Fase 2)
+Este projeto foi desenvolvido como parte do **Tech Challenge – Fase 1** e **Tech Challenge – Fase 2**, com o objetivo de criar uma solução inicial de **IA para suporte ao diagnóstico médico**, utilizando **Machine Learning** para análise de exames e classificação de doenças. Outro ponto que vou abordar é sobre a otimização de hiperparâmetros com Algoritmos Genéticos (PyGAD) e explicação em linguagem natural com LLM.
 
 ---
 
 ## Objetivo
-Desenvolver um sistema capaz de analisar automaticamente exames médicos (dados estruturados) e indicar se o diagnóstico é **maligno** ou **benigno**, oferecendo métricas claras e interpretabilidade para apoiar profissionais de saúde.
+Desenvolver um sistema capaz de analisar automaticamente exames médicos (dados estruturados) e indicar se o diagnóstico é **maligno** ou **benigno**, oferecendo métricas claras e interpretabilidade para apoiar profissionais de saúde e também a otimização de hiperparâmetros com Algoritmos Genéticos (PyGAD) e explicação em linguagem natural com LLM.
 
 ---
 
@@ -26,7 +26,8 @@ Diagnostico_cancer_ml/
 │
 ├── diagnostico_cancer_ml/     # Pacote principal do projeto
 │   ├── __init__.py
-│   └── core.py         # Código principal (funções e classes do pacote)
+│   └── core.py         # Código Tech Challenge - Fase 1 (funções e classes do pacote)
+│   └── core_v2.py      # Código Tech Challenge - Fase 2 (Otimização e uso de LLM)
 │
 ├── Dockefile
 ├── README.md           # Este arquivo
@@ -43,10 +44,14 @@ Diagnostico_cancer_ml/
 - **Matplotlib** & **Seaborn** – Visualizações
 - **Scikit-learn** – Modelagem de Machine Learning
 - **Pytest** – Testes automatizados
-
+- **jupyter**
+- **openai** - (GPT)
+- **transformers**
+- **numpy**
+- **pygad** - (Algoritmos Genéticos)
 ---
 
-## Fluxo do Projeto
+## Fluxo do Projeto -- Fase 1
 
 **Exploração de Dados**  
 - Carregamento do dataset.  
@@ -69,8 +74,26 @@ Diagnostico_cancer_ml/
 - **Cross-validation (10 folds)** para validar consistência dos resultados.
 
 ---
+## Fluxo do Projeto -- Fase 2
 
-## Resultados
+**Baseline**  
+- RandomForest sem ajuste de hiperparâmetros.
+
+**Otimização com Algoritmo Genético (PyGAD)**  
+- Função fitness: F1 médio em validação cruzada (5 folds).
+- Espaço de busca: número de árvores, profundidade máxima e min_samples_split.
+- 3 experimentos diferentes de GA (alterando população, gerações e taxa de mutação).
+
+**Comparação de Resultados**
+- Tabela consolidando baseline e experimentos.
+- Gráficos de barras e linha mostrando a evolução do F1-score.
+
+**Comparação de Resultados**
+- Explicação automática dos resultados em linguagem natural.
+- Voltada para médicos: destaca impacto prático em diagnósticos, decisões clínicas e segurança do paciente.
+
+---
+## Resultados - Fase 1
 
 **Com todas as features:**
 - **Regressão Logística:** 98.0% ± 1.5%  
@@ -87,6 +110,16 @@ Diagnostico_cancer_ml/
 - **Random Forest (PCA):** 0.932 ± 0.042
 - **SVC (PCA):** 0.972 ± 0.021
 
+---
+## Resultados - Fase 2
+
+**Configuração	F1 médio (CV=5)**
+- **Baseline (RandomForest default)**	0.9652
+- **GA - Exp1 (pop=16, gen=12, mut=0.15)**	0.9709
+- **GA - Exp2 (pop=20, gen=20, mut=0.20)**	0.9749
+- **GA - Exp3 (pop=10, gen=10, mut=0.10)**	0.9736
+
+
 ## Resumo interpretativo dos resultados
 A comparação dos modelos de classificação por meio da validação cruzada (10-fold) evidenciou que a Regressão Logística apresentou desempenho consistente e elevado em todas as estratégias avaliadas (todas as features, 10 mais correlacionadas e PCA), alcançando até 98% de acurácia média com baixo desvio padrão. Isso indica uma forte capacidade do modelo em generalizar bem para novos dados.
 
@@ -98,7 +131,7 @@ De forma geral, os resultados demonstram que, embora a seleção de features e o
 
 ---
 
-## Como Executar
+## Como Executar - Fase 1
 
 ### Clone o repositório:
 ```bash
@@ -157,6 +190,33 @@ docker run -p 8888:8888 diagnostico-medico
 ```
 
 ---
+## Como Executar - Fase 2
+
+### Clone o repositório:
+```bash
+git clone https://github.com/vinicius025/diagnostico_cancer_ml.git
+cd diagnostico_cancer_ml
+```
+### Instale as dependências:
+```bash
+pip install -r requirements.txt
+```
+
+### Rode o notebook:
+Verifique se o Jupyter está instalado. Se não estiver:
+```bash
+pip install diagnostico_cancer_ml
+```
+
+Em seguida, rode:
+```bash
+jupyter diagnostico_cancer_ml diagnostico_cancer_ml/core_v2.ipynb
+```
+
+### (Opcional) Defina sua chave OpenAI em variável de ambiente para habilitar a explicação com LLM:
+```bash
+export OPENAI_API_KEY="sua_chave_aqui"
+```
 
 ## Aviso
 Este projeto tem **fins acadêmicos**.  
