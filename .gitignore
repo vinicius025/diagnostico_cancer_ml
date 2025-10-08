@@ -2,6 +2,9 @@
 env/
 .venv/
 
+# Ignorar variáveis locais
+.env
+
 # Pastas de build do Python
 env/
 dist/
