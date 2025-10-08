@@ -29,23 +29,25 @@ Desenvolver um sistema capaz de analisar automaticamente exames médicos (dados 
 ---
 
 ## Estrutura do Projeto
+
+```bash
 diagnostico_cancer_ml/
 │
 ├── diagnostico_cancer_ml/
-│ ├── core.py # Fase 1 – Modelagem Clássica
-│ └── core_v2.py # Fase 2 – Otimização + LLM
-│ 
+│   ├── core.py              # Fase 1 – Modelagem Clássica
+│   ├── core_v2.py           # Fase 2 – Otimização + LLM
 │
 ├── infra/
-│ ├── containerapp.yaml # Configuração IaC (Azure)
-│ └── log_analytics.json # Observabilidade
+│   ├── containerapp.yaml    # Configuração IaC (Azure)
+│   ├── log_analytics.json   # Observabilidade
 │
-├── requirements.txt # Dependências do projeto
-├── Dockerfile # Imagem base do container
-├── docker-compose.yml # Execução local
+├── requirements.txt         # Dependências do projeto
+├── Dockerfile               # Imagem base do container
+├── docker-compose.yml       # Execução local
 ├── README.md
 ├── setup.py
-└── app.py # API Flask (implantada na Azure)
+└── app.py                   # API Flask (implantada na Azure)
+```
 
 
 ---
