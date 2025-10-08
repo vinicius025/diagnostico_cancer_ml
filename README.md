@@ -217,5 +217,5 @@ Licença: Creative Commons Attribution 4.0 International (CC BY 4.0).
 
 **Link do Vídeo de Demonstração**
 
-Vídeo de demonstração part 1: https://youtu.be/5UroJKtpQP8
-Vídeo de demonstração part 2: 
+- Vídeo de demonstração part 1: https://youtu.be/5UroJKtpQP8
+- Vídeo de demonstração part 2: 
