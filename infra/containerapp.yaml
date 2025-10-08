@@ -1,0 +1,36 @@
+# ==============================================================
+# Azure Container App - Diagnóstico de Câncer de Mama (Fase 2)
+# ==============================================================
+
+type: Microsoft.App/containerApps
+apiVersion: 2023-05-01
+name: diagnostico-ml-app
+location: eastus
+properties:
+  environmentId: /subscriptions/9289eb78-628e-4841-8440-e9be58440c04/resourceGroups/ml-diagnostico/providers/Microsoft.App/managedEnvironments/env-diagnostico-ml
+  configuration:
+    activeRevisionsMode: Single
+    ingress:
+      external: true
+      targetPort: 5000
+    secrets:
+      - name: openai-api-key
+        value: ${OPENAI_API_KEY}
+      - name: docker-password
+        value: ${DOCKER_PASSWORD}     
+    registries:
+      - server: docker.io
+        username: ${DOCKER_USER}      
+        passwordSecretRef: docker-password
+  template:
+    containers:
+      - name: diagnostico-ml-container
+        image: aragao025/diagnostico_cancer_ml:latest   
+        resources:
+          cpu: 0.5
+          memory: 1Gi
+        env:
+          - name: OPENAI_API_KEY
+            secretRef: openai-api-key
+          - name: MODEL_PATH
+            value: /app/models/randomforest_optimized.pkl

@@ -1,19 +1,42 @@
+# ===============================
+# Dockerfile - Fase 2 (PyGAD + LLM)
+# ===============================
+
+# Imagem base: Python 3.11 slim (leve e moderna)
 FROM python:3.11-slim
 
-# Diretório de trabalho
+# Evitar prompts interativos
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Instalar dependências básicas do sistema
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3-dev \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Definir diretório de trabalho
 WORKDIR /app
 
-# Copia arquivos do projeto
-COPY . .
+# Copiar os arquivos do projeto para dentro do container
+COPY . /app
 
-# Atualiza o pip
-RUN pip install --upgrade pip
+# Instalar dependências do Python
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Instala dependências
-RUN pip install -r requirements.txt
+# Dockerfile
+FROM python:3.11-slim
 
-# Expondo porta padrão do Jupyter
-EXPOSE 8888
+WORKDIR /app
 
-# Comando para rodar o Jupyter Notebook
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+# Copiar arquivos
+COPY . /app
+
+# Instalar dependências
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expor a porta do Flask
+EXPOSE 5000
+
+# Comando para rodar a API Flask
+CMD ["python", "app.py"]

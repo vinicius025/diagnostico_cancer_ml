@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  diagnostico-ml-app:
+    build: .
+    container_name: diagnostico-ml
+    ports:
+      - "5000:5000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - ./models:/app/models
+    restart: unless-stopped
