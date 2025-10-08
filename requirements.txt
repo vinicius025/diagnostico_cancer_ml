@@ -1,3 +1,4 @@
+flask
 pandas
 matplotlib
 seaborn
@@ -8,3 +9,4 @@ openai
 transformers
 numpy
 pygad
+joblib
