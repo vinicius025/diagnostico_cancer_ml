@@ -1,28 +1,69 @@
+# =========================
 # Ambiente virtual
+# =========================
 env/
 .venv/
+venv/
 
-# Ignorar variáveis locais
+# =========================
+# Variáveis locais
+# =========================
 .env
 
-# Pastas de build do Python
-env/
+# =========================
+# Pastas de build / instalação do Python
+# =========================
 dist/
 build/
 *.egg-info/
 
+# =========================
 # Cache do Python
+# =========================
 __pycache__/
 *.py[cod]
+*.pyo
+*.so
 
-# Checkpoints do Jupyter
+# =========================
+# Notebooks / Jupyter
+# =========================
 .ipynb_checkpoints/
+*.nbconvert.ipynb
 
-# Arquivos temporários de sistema
-.DS_Store
-Thumbs.db
-.env
-log_analytics.json
-.ipynb_checkpoints/
+# =========================
+# Logs e dados locais
+# =========================
 logs/
 *.log
+log_analytics.json
+
+# =========================
+# Modelos e datasets
+# =========================
+models/
+*.pkl
+*.joblib
+*.h5
+*.sav
+data/
+datasets/
+*.csv
+*.xlsx
+*.xls
+
+# =========================
+# Arquivos temporários do sistema / IDE
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Docker
+# =========================
+*.pid
+*.seed
+*.bak
+*.swp
