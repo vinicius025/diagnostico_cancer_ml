@@ -8,7 +8,9 @@
       "name": "law-diagnostico-ml",
       "location": "eastus",
       "properties": {
-        "sku": { "name": "PerGB2018" },
+        "sku": {
+          "name": "PerGB2018"
+        },
         "retentionInDays": 30
       }
     }
