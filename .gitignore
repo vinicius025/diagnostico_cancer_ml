@@ -22,3 +22,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 .env
+log_analytics.json
+.ipynb_checkpoints/
+logs/
+*.log
